@@ -8,7 +8,7 @@ public class MilkTeaBigSize extends MilkTea {
 
 	@Override
 	public String getName() {
-		return "大杯奶茶加" + sugarDegree.degree() + additable.name();
+		return sugarDegree.degree() + "大杯奶茶加" + additable.name();
 	}
 
 }

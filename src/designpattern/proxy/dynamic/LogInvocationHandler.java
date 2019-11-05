@@ -8,6 +8,9 @@ public class LogInvocationHandler implements InvocationHandler {
 
 	private Object obj;
 
+	/**
+	 * obj为被代理的真实对象
+	 */
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 		before();
@@ -17,6 +20,7 @@ public class LogInvocationHandler implements InvocationHandler {
 	}
 
 	public Object getProxy(Object obj) {
+		System.out.println("getProxy");
 		this.obj = obj;
 		return Proxy.newProxyInstance(obj.getClass().getClassLoader(), obj.getClass().getInterfaces(), this);
 	}
